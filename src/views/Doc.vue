@@ -27,15 +27,13 @@
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
-import { inject } from "vue";
-import { Ref } from "vue";
+import { inject, Ref } from "vue";
 export default {
-
   components: { Topnav },
-  setup(){
-    const menuVisible = inject<Ref<boolean>>('menuVisible')
-    return{menuVisible}
-  }
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    return { menuVisible };
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -63,7 +61,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    //background: lightgreen;
+    background: white;
   }
 }
 aside {
@@ -75,7 +73,6 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
-
   > h2 {
     margin-bottom: 4px;
   }
@@ -88,5 +85,4 @@ aside {
 main {
   overflow: auto;
 }
-
 </style>

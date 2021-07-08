@@ -1,25 +1,21 @@
 <template>
-
   <button class="gulu-button" :class="classes" :disabled="disabled">
     <span v-if="loading" class="gulu-loadingIndicator"></span>
     <slot />
   </button>
-
-
 </template>
-
 <script lang="ts">
 import { computed } from "vue";
 export default {
-  props:{
-    theme:{
+  props: {
+    theme: {
       type: String,
-      default: "button"
-  },
-  size: {
-    type: String,
-    default: "normal",
-  },
+      default: "button",
+    },
+    size: {
+      type: String,
+      default: "normal",
+    },
     level: {
       type: String,
       default: "normal",
@@ -32,22 +28,21 @@ export default {
       type: Boolean,
       default: false
     }
-},
+  },
   setup(props) {
-    const { theme,size,level } = props;
-    const classes = computed(()=>{
+    const { theme, size, level } = props;
+    const classes = computed(() => {
       return {
         [`gulu-theme-${theme}`]: theme,
         [`gulu-size-${size}`]: size,
         [`gulu-level-${level}`]: level,
       };
     });
-    return {classes}
+    return { classes };
   },
 };
 </script>
-
-<style lang="scss" >
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
@@ -55,7 +50,6 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-
 .gulu-button {
   box-sizing: border-box;
   height: $h;
@@ -90,7 +84,7 @@ $grey: grey;
     box-shadow: none;
     color: $blue;
     &:hover,
-    &:focus{
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
@@ -103,7 +97,6 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-
   &.gulu-size-big {
     font-size: 24px;
     height: 48px;
@@ -113,7 +106,7 @@ $grey: grey;
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
-    }
+  }
   &.gulu-theme-button {
     &.gulu-level-main {
       background: $blue;
@@ -192,6 +185,4 @@ $grey: grey;
   0%{transform: rotate(0deg)}
   100%{transform: rotate(360deg)}
 }
-
-
 </style>
