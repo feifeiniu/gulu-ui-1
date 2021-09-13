@@ -1,10 +1,14 @@
 <template>
   <div>Tabs 示例</div>
-  <h1>示例1</h1>
-  <Tabs v-model:selected="x">
+  <div class="demo1">
+    <h3>选择标签</h3>
+    <Tabs v-model:selected="x">
     <Tab title="导航1">内容1</Tab>
     <Tab title="导航2">内容2</Tab>
   </Tabs>
+  </div>
+  
+  
 </template>
 
 <script lang="ts">
@@ -26,3 +30,15 @@ export default {
   }
 }
 </script>
+<style scoped>
+.demo1 {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+</style>

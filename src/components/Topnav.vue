@@ -1,9 +1,13 @@
 <template>
   <div class="topnav">
-  <div class="logo" @click="toggleMenu">LOGO</div>
+  <div class="logo" >LOGO</div>
   <ul class="menu">
-    <li>菜单1</li>
-    <li>菜单2</li>
+    <li>
+      <a href="https://www.yuque.com/fanyingmanxingren/kb64cm/zb91w9">我的博客</a>
+    </li>
+    <li>
+      <router-link to="/">登录</router-link>   
+    </li>
   </ul>
     <span class="toggleAside" @click="toggleMenu"></span>
 </div>
@@ -13,12 +17,12 @@ import {inject} from "vue";
 
 export default {
   setup(){
-   const menuVisible = inject<Ref<boolean>>('menuVisible')
+  //  const menuVisible = inject<Ref<boolean>>('menuVisible')
 
-    const toggleMenu = ()=>{
-     menuVisible.value = !menuVisible.value
-    }
-    return{toggleMenu}
+  //   const toggleMenu = ()=>{
+  //    menuVisible.value = !menuVisible.value
+  //   }
+  //   return{toggleMenu}
   }
 }
 </script>

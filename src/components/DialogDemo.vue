@@ -1,6 +1,7 @@
 <template>
   <div>Dialog 示例</div>
-  <h1>示例1</h1>
+  <div class="demo1">
+     <h3>示例1</h3> <hr>
   <Button @click="toggle">toggle</Button>
   <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
     <template v-slot:content>
@@ -11,8 +12,12 @@
       <strong>加粗的标题</strong>
     </template>
   </Dialog>
-  <h1>示例2</h1>
+  </div>
+ <div class="demo2">
+   <h3>示例2</h3> <hr>
   <Button @click="showDialog">show</Button>
+ </div>
+  
 </template>
 
 <script lang="ts">
@@ -61,3 +66,25 @@ export default {
   }
 }
 </script>
+<style scoped>
+.demo1{
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+.demo2{
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+</style>

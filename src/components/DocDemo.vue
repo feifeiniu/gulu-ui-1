@@ -1,5 +1,5 @@
 <template>
   <div>
-    默认页面
+   请选择组件
   </div>
 </template>
