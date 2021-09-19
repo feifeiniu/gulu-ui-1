@@ -175,6 +175,13 @@
   resolved "https://registry.nlark.com/@types/http-errors/download/@types/http-errors-1.8.0.tgz?cache=0&sync_timestamp=1621257198585&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fhttp-errors%2Fdownload%2F%40types%2Fhttp-errors-1.8.0.tgz#682477dbbbd07cd032731cb3b0e7eaee3d026b69"
   integrity sha1-aCR327vQfNAycxyzsOfq7j0Ca2k=
 
+"@types/jquery@^3.5.6":
+  version "3.5.6"
+  resolved "https://registry.nlark.com/@types/jquery/download/@types/jquery-3.5.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fjquery%2Fdownload%2F%40types%2Fjquery-3.5.6.tgz#97ac8e36dccd8ad8ed3f3f3b48933614d9fd8cf0"
+  integrity sha1-l6yONtzNitjtPz87SJM2FNn9jPA=
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/keygrip@*":
   version "1.0.2"
   resolved "https://registry.nlark.com/@types/keygrip/download/@types/keygrip-1.0.2.tgz#513abfd256d7ad0bf1ee1873606317b33b1b2a72"
@@ -240,6 +247,11 @@
   dependencies:
     "@types/mime" "^1"
     "@types/node" "*"
+
+"@types/sizzle@*":
+  version "2.3.3"
+  resolved "https://registry.nlark.com/@types/sizzle/download/@types/sizzle-2.3.3.tgz#ff5e2f1902969d305225a047c8a0fd5c915cebef"
+  integrity sha1-/14vGQKWnTBSJaBHyKD9XJFc6+8=
 
 "@vue/compiler-core@3.0.0-rc.1":
   version "3.0.0-rc.1"
@@ -406,6 +418,13 @@ accepts@^1.3.5:
     mime-types "~2.1.24"
     negotiator "0.6.2"
 
+ajax@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.nlark.com/ajax/download/ajax-0.0.4.tgz#b6f4ce8bd590f5f4ba2dcfde11de789f209f2423"
+  integrity sha1-tvTOi9WQ9fS6Lc/eEd54nyCfJCM=
+  dependencies:
+    underscore ""
+
 ansi-regex@^5.0.0:
   version "5.0.0"
   resolved "https://registry.nlark.com/ansi-regex/download/ansi-regex-5.0.0.tgz#388539f55179bf39339c81af30a654d69f87cb75"
@@ -454,6 +473,13 @@ at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/at-least-node/download/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha1-YCzUtG6EStTv/JKoARo8RuAjjcI=
+
+axios@^0.21.4:
+  version "0.21.4"
+  resolved "https://registry.nlark.com/axios/download/axios-0.21.4.tgz?cache=0&sync_timestamp=1630942912149&other_urls=https%3A%2F%2Fregistry.nlark.com%2Faxios%2Fdownload%2Faxios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha1-xnuQ3AVo5cHPKwuFjEO6KOLtpXU=
+  dependencies:
+    follow-redirects "^1.14.0"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -924,6 +950,11 @@ follow-redirects@^1.0.0:
   resolved "https://registry.nlark.com/follow-redirects/download/follow-redirects-1.14.1.tgz?cache=0&sync_timestamp=1620555521328&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
   integrity sha1-2RFN7Qoc/dM04WTmZirQK/2R/0M=
 
+follow-redirects@^1.14.0:
+  version "1.14.4"
+  resolved "https://registry.nlark.com/follow-redirects/download/follow-redirects-1.14.4.tgz?cache=0&sync_timestamp=1631622341822&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.14.4.tgz#838fdf48a8bbdd79e52ee51fb1c94e3ed98b9379"
+  integrity sha1-g4/fSKi73XnlLuUfsclOPtmLk3k=
+
 fresh@~0.5.2:
   version "0.5.2"
   resolved "https://registry.npm.taobao.org/fresh/download/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -1260,6 +1291,11 @@ jest-worker@^24.9.0:
     merge-stream "^2.0.0"
     supports-color "^6.1.0"
 
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npm.taobao.org/jquery/download/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha1-xyoJ8Vwb3OFC9J2/EXC9+K2sJHA=
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.nlark.com/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1422,6 +1458,11 @@ magic-string@^0.25.2, magic-string@^0.25.7:
   integrity sha1-P0l9b9NMZpxnmNy4IfLvMfVEUFE=
   dependencies:
     sourcemap-codec "^1.4.4"
+
+marked@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.nlark.com/marked/download/marked-3.0.4.tgz#b8a1539e5e05c6ea9e93f15c0bad1d54ce890406"
+  integrity sha1-uKFTnl4Fxuqek/FcC60dVM6JBAY=
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -2120,6 +2161,11 @@ type-is@^1.6.16:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
+
+underscore@:
+  version "1.13.1"
+  resolved "https://registry.npm.taobao.org/underscore/download/underscore-1.13.1.tgz?cache=0&sync_timestamp=1618502987422&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Funderscore%2Fdownload%2Funderscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
+  integrity sha1-DBxr0t9UtrafIxQGbWW2zeb8+dE=
 
 universalify@^2.0.0:
   version "2.0.0"

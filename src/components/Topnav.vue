@@ -1,46 +1,68 @@
 <template>
-  <div class="topnav">
-  <div class="logo" >LOGO</div>
+  <div class="topnav" >
+    <router-link to="/home" class="logo" >
+      <svg class="icon" >
+        <use xlink:href="#icon-bal"></use>
+      </svg>
+    </router-link>
   <ul class="menu">
     <li>
       <a href="https://www.yuque.com/fanyingmanxingren/kb64cm/zb91w9">我的博客</a>
     </li>
     <li>
-      <router-link to="/">登录</router-link>   
+      <router-link to="/" @click="logout">登录</router-link>
     </li>
   </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
-</div>
+    <span v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
+       <svg class="icon" >
+        <use xlink:href="#icon-launch"></use>
+      </svg>
+    </span>
+  </div>
 </template>
 <script lang="ts">
 import {inject} from "vue";
+import Auth from "../apis/auth.js"
+
 
 export default {
-  setup(){
-  //  const menuVisible = inject<Ref<boolean>>('menuVisible')
-
-  //   const toggleMenu = ()=>{
-  //    menuVisible.value = !menuVisible.value
-  //   }
-  //   return{toggleMenu}
+  props:{
+    toggleMenuButtonVisible:{
+      type:Boolean,
+      default:false
+    }
+  },
+  setup() {
+   const menuVisible = inject<Ref<boolean>>('menuVisible')
+    const logout = async () => await Auth.logout()
+    const toggleMenu = ()=>{
+     menuVisible.value = !menuVisible.value
+    }
+    return { toggleMenu, logout }
   }
 }
 </script>
 <style lang="scss" scoped>
+
 .topnav {
-  background: pink;
+  height: 68.27px;
+  background: #f1ede9;
   display: flex;
   padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   justify-content: center;
   align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    >svg{
+      height: 32px;
+      width: 32px;
+    }
   }
   > .menu {
     display: flex;
@@ -51,9 +73,8 @@ export default {
     }
   }
   .toggleAside{
-    width: 24px;
-    height: 24px;
-    background: red;
+    width: 32px;
+    height:32px;
     position: absolute;
     left: 16px;
     top: 50%;
@@ -61,9 +82,20 @@ export default {
     display: none;
   }
   @media (max-width: 500px) {
-    > .menu{display: none}
-    > .logo{margin: 0 auto}
-    > .toggleAside{display: inline-block}
+    //> .menu{display: none}
+    > .topnav{
+      display: flex;
+      align-items: center;
+    }
+    > .menu{
+      margin-left: auto;
+    }
+    > .logo{
+      display: none;
+    }
+    > .toggleAside{
+      display: inline-block;
+    }
   }
 }
 </style>

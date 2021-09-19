@@ -4,20 +4,20 @@
  <div class="form">
       <h3 @click="changeRegist">创建账户</h3>
      <transition name="slide">  
-      <div :class="{show:isRegist}" class="register"   @click="onRegister" >
+      <div :class="{show:isRegist}" class="register" @click="onRegister"   >
       <input type="text" placeholder="用户名" v-model="register.username" > 
-      <input type="password" placeholder="密码" v-model="register.passworld">
+      <input type="password" placeholder="密码" v-model="register.password">
       <p :class="{error:register.isError}">{{register.notice}}</p>
-      <div class="button" >注册账号</div>
+      <div class="button" @click="registerSubmmit">注册账号</div>
       </div>
      </transition>
       <h3 @click="changeLogin">登录</h3>
      <transition name="slide"> 
       <div :class="{show:isLogin}" class="login" @click="onLogin" >           
       <input type="text"  placeholder="输入用户名" v-model="login.username" > 
-      <input type="password"  placeholder="输入密码" v-model="login.passworld"> 
+      <input type="password"  placeholder="输入密码" v-model="login.password">
       <p :class="{error:login.isError}">{{login.notice}}</p>
-      <div class="button">登录</div>
+      <div class="button" @click="loginSubmmit">登录</div>
       </div>
      </transition>
   </div>
@@ -25,7 +25,14 @@
  </div>
 </template>
 
-<script lang="ts">
+<script>
+import Auth from '../apis/auth'
+
+ Auth.getInfo()
+    .then(data => {
+      console.log(data)
+    })
+
 export default {
   data(){
     return{
@@ -69,9 +76,21 @@ export default {
         }
          this.register.isError = false
          this.register.notice = ''
-        console.log(`start register..., username: ${this.register.username} , password: ${this.register.password}`) 
-             
+         console.log(`start register..., username: ${this.register.username} , password: ${this.register.password}`)
+
+
       },
+    registerSubmmit(){
+      Auth.register({
+        username: this.register.username,
+        password: this.register.password
+      }).then(data => {
+        console.log(data)
+        alert('注册成功')
+      }).catch(data=>{
+        alert('用户已存在')
+      })
+    },
      onLogin(){
         let result1 =this.validUsername(this.login.username)
         if(!result1.isValid){
@@ -80,15 +99,30 @@ export default {
           return
         }
         let result2 = this.validPassword(this.login.password)
-        if(!/^.{6,16}$/.test(this.login.password)){
+        if(!result2.isValid){
           this.login.isError = true
           this.login.notice = result2.notice
           return
         }
         this.login.isError = false
         this.login.notice = ''
-        console.log(`start login..., username: ${this.login.username} , password: ${this.login.password}`)      
-      },
+        console.log(`start login..., username: ${this.login.username} , password: ${this.login.password}`)
+
+     },
+    loginSubmmit(){
+      Auth.login({
+        username: this.login.username,
+        password: this.login.password
+      }).then(data => {
+        console.log(data)
+        alert('登陆成功')
+        window.location = '#home'
+      }).catch(data=>{
+        alert('用户名或密码错误')
+      })
+
+
+    },
     
     validUsername(username){
      return{
