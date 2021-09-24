@@ -6,15 +6,21 @@ import SwitchDemo from "./components/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabsDemo.vue";
-import ContinueDemo from "./components/ContinueDemo.vue";
+import ContinueDemo from "./views/ContinueDemo.vue";
 import RadioDemo from "./components/RadioDemo.vue";
 import InputDemo from "./components/InputDemo.vue";
-import { h } from 'vue';
 // @ts-ignore
+import introduce from "./markdown/introduce.md"
+// @ts-ignore
+import start from "./markdown/start.md"
+// @ts-ignore
+import install from "./markdown/install.md"
+import { h } from 'vue';
+
 import Markdown from './components/Markdown.vue';
 
 const history = createWebHashHistory();
-const md = filename => h(Markdown, { path: `../markdown/${filename}.md`, key: filename })
+const md = string => h(Markdown, { content: string, key: string})
 export const router = createRouter({
     history: history,
     routes: [
@@ -24,9 +30,9 @@ export const router = createRouter({
             path: "/doc", component: Doc,
             children: [
                 { path: "", redirect: '/doc/introduce' },
-                { path: "introduce", component: md('introduce') },
-                { path: "start", component: md('start') },
-                { path: "install", component: md('install') },
+                { path: "introduce", component: md(introduce) },
+                { path: "start", component: md(start) },
+                { path: "install", component: md(install) },
                 { path: "switch", component: SwitchDemo },
                 { path: "button", component: ButtonDemo },
                 { path: "dialog", component: DialogDemo },
